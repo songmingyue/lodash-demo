@@ -7,7 +7,51 @@
     <title>Document</title>
 </head>
 <script src="../page/demo.js"></script>
+<script src="../node_modules/lodash/lodash.js"></script>
+<script src="../js/lodash.js"></script>
 <body>
-    
+	<div>
+		<p>lodash是什么</p>
+		<span>lodash是一个具有一致接口、模块化、高性能等特性的 JavaScript 工具库。lodash更加偏向于基础的操作，对象，数组字符串，函数等</span>
+		<p>模块化</p>
+		<span>模块就是实现特定功能的一组方法。</span>
+		<code>
+			var module1 = new Object({
+	　　　　_count : 0,
+	　　　　m1 : function (){
+	　　　　　　//...
+	　　　　},
+	　　　　m2 : function (){
+	　　　　　　//...
+	　　　　}
+	　　});
+		</code>
+	</div>
+    <script>
+    	//这是数组的一些方法
+
+
+    	//遍历去找,类似于foreach用法不同
+    	var collection = [1,2,3,1,4,5,1]
+    	_.forEach(collection,function(name){
+    		console.log(name)
+    	},this)
+    	//sortBy 排序功能,遍历功能
+    	var strSortResult = _.sortBy('9bclsea',function(a){
+    		console.log(a)
+    	})
+    	var users = [
+		  { 'user': 'barney', 'age': 36, 'active': false, 'pets': ['hoppy'] },
+		  { 'user': 'fred',   'age': 40, 'active': true, 'pets': ['baby puss', 'dino'] }
+		];
+
+		var a = _.pluck(_.where(users, { 'age': 36, 'active': false }), 'user');
+		console.log(a)
+
+
+    	//where 
+    	var b = _.pluck(_.where(users,{ 'age':36, 'active':false}), 'user');
+    	console.log(b)
+    </script>
 </body>
 </html>
